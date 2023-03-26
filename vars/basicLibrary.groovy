@@ -1,3 +1,3 @@
 def printMyName(name){
-	echo "${name}"
+	echo "Hello from Jenkins Library to: ${name}"
 }
