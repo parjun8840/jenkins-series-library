@@ -6,7 +6,7 @@ class Groups {
   def devOps = []
   def script
   
-  Car(script) {
+  Groups(script) {
     this.script = script
   }
   
