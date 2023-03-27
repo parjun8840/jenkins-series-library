@@ -15,6 +15,10 @@ class Groups {
     script.echo "numberOfGroups: ${numberOfGroups}"      
     script.echo "SRE team members are: ${sre}"      
     script.echo "DevOps team members are:${devOps}"
+    }
+
+  static String authorName(){
+    return "Arjun Pandey: parjun8840"
     }  
   
 }
