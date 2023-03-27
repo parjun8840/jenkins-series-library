@@ -19,6 +19,10 @@ class Groups {
 
   static String authorName(){
     return "Arjun Pandey: parjun8840"
-    }  
+    } 
+  
+  static int luckyNumber(){
+   return 8840
+} 
   
 }
