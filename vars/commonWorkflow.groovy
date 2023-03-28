@@ -1,3 +1,4 @@
+def call(String repoUrl) {
 pipeline {
   agent {
     kubernetes {
@@ -19,7 +20,7 @@ pipeline {
     stage("Checkout Code") {
                steps {
                    git branch: 'main',
-                       url: "https://github.com/parjun8840/pipeline-multi-branch"
+                       url: "${repoUrl}"
                }
            }
     stage("Cleaning workspace") {
@@ -52,4 +53,5 @@ pipeline {
 
   
   }
+}
 }
