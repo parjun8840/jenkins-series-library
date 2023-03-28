@@ -16,7 +16,6 @@ pipeline {
     }
   }
   stages {
-
     stage("Checkout Code") {
                steps {
                    git branch: 'main',
@@ -29,29 +28,24 @@ pipeline {
                    sh "mvn -version"
                }
            }
-
     stage("Running Testcase") {
               steps {
                    echo "Running Testcase"
                    sh "mvn -version"
                }
           }
-
     stage("Packing Application") {
                steps {
                    echo "Packing Application"
                    sh "mvn -version"
                }
            }
-
     stage("Build Docker"){
                steps {
                    echo "Build Docker"
                    sh "mvn -version"
                }
            }
-
-  
   }
 }
 }
