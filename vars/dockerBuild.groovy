@@ -8,7 +8,7 @@ pipeline {
         spec:
           containers:
           - name: docker-build
-            image: buildx-bin:latest
+            image: docker/buildx-bin:latest
             command:
             - cat
             tty: true
