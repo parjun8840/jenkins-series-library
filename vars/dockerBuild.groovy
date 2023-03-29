@@ -21,7 +21,7 @@ pipeline {
     stage('Publish') {
     steps {
       echo 'Building and publishing multi-arch image to DockerHub..'
-      sh 'docker buildx build --push --platform linux/amd64,linux/arm64 -t $DOCKER_ID/prometheus:latest .'
+      sh '/opt/homebrew/bin/docker buildx build --push --platform linux/amd64,linux/arm64 -t $DOCKER_ID/prometheus:latest .'
 }
 }
 }
