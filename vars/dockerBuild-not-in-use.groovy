@@ -13,16 +13,16 @@ pipeline {
                       }
            }
     stage('Docker login') {
-         steps {
-            dockerImage = docker.build("$DOCKER_USR/prometheus:${env.BUILD_TAG}") 
+         steps { 
+                echo 'Docker login'
+                sh 'echo $DOCKER_PSW | docker login -u $DOCKER_USR --password-stdin'
+                //docker login -u $DOCKER_USR -p $DOCKER_PSW
             }
             }
     stage('Publish') {
     steps {
       echo 'Building and publishing multi-arch image to DockerHub..'
-      withDockerRegistry([ credentialsId: "DOCKER_ID", url: "" ]) {
-        dockerImage.push()
-        }
+      sh 'docker buildx build --push --platform linux/amd64,linux/arm64 -t $DOCKER_ID/prometheus:latest .'
 }
 }
 }
