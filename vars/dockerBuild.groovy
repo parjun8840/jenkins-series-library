@@ -8,7 +8,7 @@ pipeline {
         spec:
           containers:
           - name: docker-build
-            image: docker:20.10.23-cli-alpine3.17
+            image: maven:alpine
             command:
             - cat
             tty: true
