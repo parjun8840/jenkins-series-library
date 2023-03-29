@@ -24,6 +24,7 @@ pipeline {
                    container('docker-build') {
                    git branch: 'main',
                        url: "${repoUrl}"
+                   sh 'ls -lrt'
                       }
                }
            }
