@@ -7,6 +7,11 @@ pipeline {
         kind: Pod
         spec:
           containers:
+          - name: git
+            image: alpine/git:latest
+            command:
+            - cat
+            tty: true
           - name: docker-build
             image: docker:20.10.23-cli-alpine3.17
             command:
@@ -18,7 +23,7 @@ pipeline {
   stages {
     stage("Checkout Code") {
                steps {
-                   container('docker-build') {
+                   container('git') {
                    git branch: 'dev',
                        url: "${repoUrl}"
                       }
