@@ -15,7 +15,7 @@ pipeline {
     stage('Docker login') {
          steps { 
                 echo 'Docker login'
-                sh 'echo $DOCKER_PSW | docker login -u $DOCKER_USR --password-stdin'
+                sh 'echo $DOCKER_PSW | /opt/homebrew/bin/docker login -u $DOCKER_USR --password-stdin'
             }
             }
     stage('Publish') {
