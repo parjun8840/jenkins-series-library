@@ -9,8 +9,8 @@ pipeline {
                steps {
                    git branch: 'main',
                        url: "${repoUrl}"
+                    sh 'ls -lrt'
                       }
-                   sh 'ls -lrt'
            }
     stage('Docker login') {
          steps { 
