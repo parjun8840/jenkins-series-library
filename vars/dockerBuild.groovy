@@ -8,7 +8,7 @@ pipeline {
         spec:
           containers:
           - name: docker-build
-            image: maven:alpine
+            image: buildx-bin:latest
             command:
             - cat
             tty: true
@@ -19,7 +19,7 @@ pipeline {
     stage("Checkout Code") {
                steps {
                    container('docker-build') {
-                   git branch: 'dev',
+                   git branch: 'main',
                        url: "${repoUrl}"
                       }
                    sh 'ls -lrt'
