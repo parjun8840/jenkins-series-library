@@ -30,6 +30,7 @@ pipeline {
                    sh 'ls -lrt'
                }
            }
+/*
     stage('Docker login') {
          steps {  container('docker-build') {
                 echo 'Docker login'
@@ -44,6 +45,7 @@ sh 'docker buildx build --push --platform linux/amd64,linux/arm64 -t $DOCKER_ID/
 }
 }
 }
+*/
 }
 }
 }
