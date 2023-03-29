@@ -1,4 +1,4 @@
-def dockerBuild(String repoUrl) {
+def call(String repoUrl) {
 pipeline {
   agent {
     kubernetes {
