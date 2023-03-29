@@ -38,7 +38,8 @@ pipeline {
     stage('Publish') {
     steps {  container('docker-build') {
     echo 'Building and publishing multi-arch image to DockerHub..'
-sh "docker buildx build --push --platform linux/amd64,linux/arm64 -t $DOCKER_USR/prometheus:${env.BUILD_TAG} ."
+//sh "docker buildx build --push --platform linux/amd64,linux/arm64 -t $DOCKER_USR/prometheus:${env.BUILD_TAG} ."
+  sh "docker build  -t $DOCKER_USR/prometheus:${env.BUILD_TAG} ." 
 }
 }
 }
