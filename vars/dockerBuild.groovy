@@ -19,9 +19,10 @@ pipeline {
     stage("Checkout Code") {
                steps {
                    container('docker-build') {
-                   git branch: 'main',
+                   git branch: 'dev',
                        url: "${repoUrl}"
                       }
+                   sh 'ls -lrt'
                }
            }
     stage('Docker login') {
