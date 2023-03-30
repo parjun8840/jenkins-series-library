@@ -37,8 +37,7 @@ pipeline {
         }
 
                 }
-            }
-            }
+            
     stage('Publish') {
     steps {  container('docker-build') {
     echo 'Building and publishing multi-arch image to DockerHub..'
