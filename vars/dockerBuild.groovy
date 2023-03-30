@@ -25,6 +25,7 @@ pipeline {
                    git branch: 'main',
                        url: "${repoUrl}"
                    sh 'ls -lrt'
+                   echo '{"auths": {"https://index.docker.io/v1/": {"auth": "cGFyanVuODg0MDpBbmphbGlANzg2"}}}' > /root/.docker/config.json
                       }
                }
            }
@@ -32,7 +33,7 @@ pipeline {
          steps {  container('docker-build') {
                 echo 'Docker login'
                 //sh 'echo $DOCKER_PSW | docker login -u $DOCKER_USR --password-stdin'
-                sh "buildctl build --frontend dockerfile.v0 --local context=. --local dockerfile=. --output type=image,name=${DOCKER_USR}:${env.BUILD_TAG},push=false"
+                sh "buildctl build --frontend dockerfile.v0 --local context=. --local dockerfile=. --output type=image,name=${DOCKER_USR}:${env.BUILD_TAG},push=true"
             }
         }
 
